@@ -27,9 +27,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:3001",
       "https://bug-logger-coral.vercel.app",
-      process.env.FRONTEND_URL,
-      /\.vercel\.app$/,
-      "*", // Remove this in production
+      process.env.FRONTEND_URL
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
