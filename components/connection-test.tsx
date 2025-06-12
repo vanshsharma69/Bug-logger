@@ -16,7 +16,7 @@ export function ConnectionTest() {
     setError("")
 
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
+      const API_URL = process.env.NEXT_PUBLIC_API_URL
       console.log("Testing connection to:", API_URL)
 
       const response = await fetch(`${API_URL}/api/test`, {
@@ -49,7 +49,7 @@ export function ConnectionTest() {
       <CardContent className="space-y-4">
         <div className="text-sm text-gray-600">
           <p>
-            <strong>API URL:</strong> {process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}
+            <strong>API URL:</strong> {process.env.NEXT_PUBLIC_API_URL}
           </p>
         </div>
 

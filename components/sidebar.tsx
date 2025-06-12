@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -23,6 +23,13 @@ interface SidebarProps {
 export function Sidebar({ user, currentView, onViewChange, onLogout }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  // Collapse sidebar on mobile by default
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsCollapsed(true)
+    }
+  }, [])
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home, roles: ["Admin", "Developer", "Client"] },
