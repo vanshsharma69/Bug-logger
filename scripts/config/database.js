@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/buglogger"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://01vanshsharma:dA6tHcRIn9VrteNR@cluster0.myajx1j.mongodb.net/buglogger?retryWrites=true&w=majority"
 
 const connectDB = async () => {
   try {
